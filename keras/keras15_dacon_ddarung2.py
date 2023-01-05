@@ -60,8 +60,11 @@ model.add(Dense(10))
 model.add(Dense(1))
 
 #3. 컴파일, 훈련
+import time
 model.compile(loss='mse', optimizer='adam') 
-model.fit(x_train, y_train, epochs=3000, batch_size=32)
+start = time.time()
+model.fit(x_train, y_train, epochs=100, batch_size=1)
+end = time.time()
 
 #4.평가, 예측 
 loss = model.evaluate(x_test, y_test)
@@ -83,6 +86,7 @@ print("RMSE : ", RMSE(y_test, y_predict))
 r2 = r2_score(y_test, y_predict)
 print("R2 : ", r2)
 
+print("걸린시간 : ", end - start)
 
 #5.제출
 y_submit = model.predict(test_csv)
@@ -105,4 +109,6 @@ submission.to_csv(path + 'submission_01050340.csv')
 0331 : RMSE :  51.5345030616858 / R2 :  0.5975652137536669
 0332 : RMSE :  51.231540961068056 / R2 :  0.6022829892539703
 
+cpu 걸린시간 : 79.29555034637451
+GPU 걸린시간 : 400.96207547187805
 """
