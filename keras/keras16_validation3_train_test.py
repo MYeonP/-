@@ -1,6 +1,7 @@
 import numpy as np
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
+from sklearn.model_selection import train_test_split
 
 #1. 데이터
 x = np.array(range(1,17))
@@ -9,22 +10,17 @@ y = np.array(range(1,17))
 # train_test_split
 # 10:3:3 으로 잘라라
 
-x_train = x[:10] 
-x_val = x[7:]
-x_test = x[7:]
-y_train = y[:7]
-y_test = y[7:] 
+x_train, x_test, y_train, y_test = train_test_split(x, y, shuffle = True, random_state=126, test_size=0.375)
+x_test, x_val, y_test, y_val = train_test_split(x_test, y_test, shuffle = True, random_state=126, test_size=0.5)
+print(x_train)  #[ 1  2  3  4  5  6  7  8  9 10]
+print(x_test)   #[11 12 13]
+print(y_train)  #[ 1  2  3  4  5  6  7  8  9 10]
+print(y_test)   #[11 12 13]
+print(x_val)    #[14 15 16]
+print(y_val)    #[14 15 16]
 
-from sklearn.model_selection import train_test_split
-x_train, x_test, y_train, y_test = train_test_split(
-    x, y, train_size=0.7, random_state=12)
-
-# x_train = np.array(range(1,11))
-# y_train = np.array(range(1,11))
-# x_test = np.array([11,12,13])
-# y_test = np.array([11,12,13])
-# x_validation = np.array([14,15,16])
-# y_validation = np.array([14,15,16])
+# test_size=0.375로 맞춰주면 x_train은 10
+# 남은 test_size를 validation으로 0.5로 나눠주면 10:3:3 완성!
 
 
 #2. 모델
@@ -36,7 +32,7 @@ model.add(Dense(1))
 #3. 컴파일, 훈련
 model.compile(loss='mse', optimizer='adam')
 model.fit(x_train, y_train, epochs=100, batch_size=1,
-          validation_split=0.25)
+          validation_data=(x_val, y_val))    #validation_split=0.25
 
 #4. 평가, 예측
 loss = model.evaluate(x_test, y_test)
