@@ -1,0 +1,703 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>14일차 수업(1.18)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a7e64e86-72af-4e10-822b-97ee35060a7f" class="page sans"><header><h1 class="page-title">14일차 수업(1.18)</h1></header><div class="page-body"><figure id="2cb2b4b0-5031-479d-95ff-bda726a86ff7" class="image"><a href="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled.png"><img style="width:639px" src="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled.png"/></a></figure><p id="ab286cb4-6cbc-4e8d-a90e-99652ff54202" class="">
+</p><p id="b74cf2aa-1762-4c1b-b838-53b7d2679b68" class="">
+</p><figure id="04d4beaa-a3af-4c9f-8114-d3f84c13ffb1" class="link-to-page"><a href="https://www.notion.so/linux_3-_-04d4beaaa3af4c9f8114d3f84c13ffb1">linux_3일차_정리</a></figure><p id="ad933d3c-5a06-40dd-afdf-e1bd181f2285" class="">
+</p><p id="bb908091-3efd-4e51-95ab-c2dcd83f662d" class="">
+</p><p id="aa8b54d8-cde9-4c30-9570-29d7ad07efcb" class="">
+</p><hr id="04f9aa81-99a6-4aab-92e0-5a97af3cf558"/><p id="07aec229-895b-42c1-bcc9-8e7460e8a4b4" class="">
+</p><h2 id="0be33999-1853-4bf9-9d63-465f43f0936c" class=""><strong>자습</strong></h2><p id="369b02b6-3e4f-437c-81d1-e6bffaeb4d29" class="">
+</p><ul id="1c308436-9997-4dd2-95a3-6b9736720eb8" class="bulleted-list"><li style="list-style-type:disc"><strong>date</strong><ul id="05c49780-a845-4467-9f63-2d7fd50efb9c" class="bulleted-list"><li style="list-style-type:circle">날짜, 시간, 요일 보기</li></ul></li></ul><ul id="06cbece5-8ba4-440b-9daa-a2cb136777ea" class="bulleted-list"><li style="list-style-type:disc"><strong>cal</strong><ul id="fabf3e2b-2167-411b-a8a1-078cbd9d8e73" class="bulleted-list"><li style="list-style-type:circle">캘린더</li></ul></li></ul><ul id="b797cea8-9422-4e88-8f15-d3eefe910ac0" class="bulleted-list"><li style="list-style-type:disc"><strong>cal 년도 (ex : cal 2023)</strong><ul id="71c64131-5c6e-48be-84d3-41bd746c1ea1" class="bulleted-list"><li style="list-style-type:circle">해당 년도 달력 표시</li></ul><ul id="da3c20a3-5f39-483f-9a04-4415876191dd" class="bulleted-list"><li style="list-style-type:circle">cal 5 1990 : 1990년 5월 달력 표시</li></ul><figure id="c4c903b9-2c5b-44d8-a644-c9dffc3b72da" class="image"><a href="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%201.png"><img style="width:614px" src="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%201.png"/></a></figure></li></ul><p id="063ec703-9d4a-49ab-8b08-8994c156c275" class="">
+</p><p id="36eaada7-b37a-4e1a-ab2c-16da403a1860" class="">
+</p><ul id="4ec7d618-db7e-47b9-8901-817da070c9d0" class="bulleted-list"><li style="list-style-type:disc"><strong>who</strong><ul id="a403c07c-cb66-493d-9640-d792536b1a65" class="bulleted-list"><li style="list-style-type:circle">접속자 확인</li></ul></li></ul><ul id="4c9fb35d-c1b1-4a50-872a-4d4975cf8e49" class="bulleted-list"><li style="list-style-type:disc"><strong>w </strong><ul id="458059cd-b8c8-4981-a830-70cb4bbbb0af" class="bulleted-list"><li style="list-style-type:circle">좀 더 자세한 로그인 정보 </li></ul></li></ul><ul id="106a70b7-d1ab-4c3a-9c68-3fd9daef2ab4" class="bulleted-list"><li style="list-style-type:disc"><strong>arch</strong><ul id="c302169b-487f-4d20-9e59-b5c17a6db762" class="bulleted-list"><li style="list-style-type:circle">architecture 약자 : CPU 정보 나타냄</li></ul></li></ul><ul id="70dec075-ec39-40ee-8d78-c8699bb0baff" class="bulleted-list"><li style="list-style-type:disc"><strong>logname</strong><ul id="d1b44cb9-8754-4610-bed1-8d3bbcee9c86" class="bulleted-list"><li style="list-style-type:circle">로그인 한 사람 정보(나)</li></ul><figure id="2921c21d-5365-4838-8636-bcbd4d092950" class="image"><a href="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%202.png"><img style="width:660px" src="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%202.png"/></a></figure></li></ul><p id="96a0f21e-384e-44b3-9a56-fa05c0a81e09" class="">
+</p><p id="8cbc44fa-71c6-4bfb-ac43-6aa173193600" class="">
+</p><ul id="fcf05e63-f232-4499-9f54-dff0cd0af648" class="bulleted-list"><li style="list-style-type:disc"><strong>id</strong><ul id="eaa8f727-45c5-47c1-9cf2-5d393de46305" class="bulleted-list"><li style="list-style-type:circle">id의 고유 넘버 표시</li></ul><ul id="9fd90a02-2966-4f54-bcee-e8e7fcfd8a2e" class="bulleted-list"><li style="list-style-type:circle">uid=1000(j) gid=1000(j) 그룹들=1000(j),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),110(lxd)</li></ul><ul id="90e50263-3c8b-4ae9-b26a-53369b7b3cf5" class="bulleted-list"><li style="list-style-type:circle">id j(나) : 나의 정보</li></ul><ul id="d41a1ada-4a3c-4c8f-9e6d-4c48ae786c7b" class="bulleted-list"><li style="list-style-type:circle">id 다른 아이디 (ex : id root / id ocn) : 해당 아이디의 고유 넘버</li></ul></li></ul><ul id="d80d3815-7c66-400e-b731-715c8a1c1125" class="bulleted-list"><li style="list-style-type:disc"><strong>id -u j / id -u ocn</strong><ul id="5d54b828-0488-405a-bd98-b72d2b514c67" class="bulleted-list"><li style="list-style-type:circle">깔끔하게 아이디 숫자만 보여줌</li></ul></li></ul><ul id="d0bcdb2c-c0dc-4c61-97c0-77247e0fab8f" class="bulleted-list"><li style="list-style-type:disc"><strong>id -g / id -g root / id -g ocn</strong><ul id="3d0c6ecb-96b9-47b2-a935-aa406d079074" class="bulleted-list"><li style="list-style-type:circle">해당 아이디의 그룹 숫자 보여줌</li></ul><figure id="9fb7845c-f53d-4cae-90a8-0429af24555d" class="image"><a href="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%203.png"><img style="width:726px" src="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%203.png"/></a></figure></li></ul><p id="cba0a429-2f0a-47c0-b627-0f14bb95c75c" class="">
+</p><p id="d398660f-1162-45e5-a99d-5987692d70bf" class="">
+</p><ul id="46d2652c-41f2-4946-a42e-047ccc275b61" class="bulleted-list"><li style="list-style-type:disc"><strong>ctrl + l </strong><ul id="2bf6af7e-0f07-4aaa-95e2-0e02feda38a4" class="bulleted-list"><li style="list-style-type:circle">클리어</li></ul></li></ul><ul id="8433b661-628e-4099-98ed-d1cd1fc33cb2" class="bulleted-list"><li style="list-style-type:disc"><strong>hostname --help</strong> <ul id="4b3afdca-085e-456b-80c5-ce99d6010765" class="bulleted-list"><li style="list-style-type:circle">hostname 옵션 정보 확인(도움말)</li></ul></li></ul><ul id="96ff3b6c-988b-4b1b-af65-0fde48b9d7d6" class="bulleted-list"><li style="list-style-type:disc"><strong>history</strong><ul id="5a1e205e-1653-4e89-853b-1a34aadaa9f5" class="bulleted-list"><li style="list-style-type:circle">이용한 명령어 순서대로 볼 수 있음</li></ul></li></ul><ul id="7aaf1703-4f1d-417f-a0db-f46f538292f2" class="bulleted-list"><li style="list-style-type:disc"><strong>hostname</strong><ul id="9fe69937-4e63-4534-83bc-4da32cdcc39d" class="bulleted-list"><li style="list-style-type:circle">내 이름</li></ul></li></ul><ul id="a0516914-b2e7-4a3d-a375-22323ddf1bd0" class="bulleted-list"><li style="list-style-type:disc"><strong>uname</strong><ul id="52b317f7-7959-4aae-aaac-2c3954bd7a6f" class="bulleted-list"><li style="list-style-type:circle">리눅스 이름</li></ul><figure id="500a223e-3ded-494c-b49b-575d51a5da3a" class="image"><a href="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%204.png"><img style="width:723px" src="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%204.png"/></a></figure></li></ul><p id="f1802f72-dae8-460d-90b0-3c6d4be16458" class="">
+</p><p id="8718d0d1-cee9-46a7-9324-32c3100e70e9" class="">
+</p><ul id="061de5d7-b08b-44b7-ad94-109e59ba8b06" class="bulleted-list"><li style="list-style-type:disc"><strong>명령 프롬프트</strong></li></ul><p id="1cabdbf8-c0b7-45d7-a95b-6fd995f2cb1a" class="">
+</p><ul id="ae02dbbb-a5bf-4ed3-aa8d-341d49fa8ef2" class="bulleted-list"><li style="list-style-type:disc"><strong>. / .. (점 하나, 점 둘)</strong><ul id="bd8d416a-d92d-41c0-8952-5f7acca663bf" class="bulleted-list"><li style="list-style-type:circle">.(점 하나) : 자기 자신</li></ul><ul id="5a23a5ec-4980-4de3-af88-b2ba12d38a5c" class="bulleted-list"><li style="list-style-type:circle">..(점 둘) : 부모 디렉토리<figure id="0a391a1c-3f7c-42ad-9102-c962d1fc2c2f" class="image"><a href="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%205.png"><img style="width:241px" src="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%205.png"/></a></figure></li></ul><ul id="19a3d732-3d6e-4858-8af2-637ba12c0a5d" class="bulleted-list"><li style="list-style-type:circle">ex : cd .  : 자기 자신(이동 없음)</li></ul><ul id="864673f1-bf0d-4704-be08-be6af7670e7d" class="bulleted-list"><li style="list-style-type:circle">ex : cd . . : 부모 디렉토리로 이동(d1 → aaa)</li></ul><ul id="6cb2469a-b3f9-486c-b6b1-7f72e98997f0" class="bulleted-list"><li style="list-style-type:circle">ex : cd d1 : d1 디렉토리로 이동(aaa → d1)</li></ul><p id="3134861a-98ac-4fac-bf61-defedcb6e6d8" class="">
+</p><p id="b82abe2b-4601-4862-b71e-59cbaf62e2c5" class="">
+</p></li></ul><ul id="5fa38b26-3c77-4ed9-a3ce-f1e01645313f" class="bulleted-list"><li style="list-style-type:disc"><strong>mkdir c:\aaa</strong><ul id="e98b4e55-b574-41d2-a955-7df55b5dacf8" class="bulleted-list"><li style="list-style-type:circle">aaa라는 디렉토리 생성</li></ul><ul id="350e0e70-364c-424b-81c3-8e27120dd966" class="bulleted-list"><li style="list-style-type:circle">cls : clear space / 도스 화면 밀기</li></ul><ul id="f4bbe473-8174-454b-91e0-3bf93918ced5" class="bulleted-list"><li style="list-style-type:circle">C:\Users\bitcamp &gt; cd c:\aaa(c 드라이브의 aaa 디렉토리로 접속)</li></ul><ul id="2e493ff6-57ee-422c-949e-651ca5547edc" class="bulleted-list"><li style="list-style-type:circle">c:\aaa&gt;<figure id="7f06fcf5-f94e-471c-a146-95de3b1e9f27" class="image"><a href="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%206.png"><img style="width:457px" src="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%206.png"/></a></figure><figure id="9f7eb0d5-9298-405c-9eef-92d569dd519f" class="image"><a href="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%207.png"><img style="width:778px" src="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%207.png"/></a></figure></li></ul><ul id="147916b4-685d-4593-b4e5-724ce905f934" class="bulleted-list"><li style="list-style-type:circle">mkdir d1 d2 d3 : d1 d2 d3 디렉토리 생성<figure id="380812d9-e9de-412c-95fb-113368c5e1aa" class="image"><a href="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%208.png"><img style="width:894px" src="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%208.png"/></a></figure></li></ul></li></ul><p id="28960fe0-05e8-433a-b09a-d16c4c91ad67" class="">
+</p><p id="114c694e-2f66-4601-8ced-f7f637c6a414" class="">
+</p><ul id="a287247a-8e22-47ee-b58f-b451b2111d88" class="bulleted-list"><li style="list-style-type:disc"><strong>mkdir ddd</strong><ul id="357a9ff2-0ee7-46bd-be2a-2943925d573a" class="bulleted-list"><li style="list-style-type:circle">ddd 라는 디렉토리 생성</li></ul></li></ul><ul id="4eb417fb-41c7-44e0-a80e-5a03e7869c2e" class="bulleted-list"><li style="list-style-type:disc"><strong>touch bbb</strong><ul id="22f4caf0-b303-49a0-807c-485d685b49f1" class="bulleted-list"><li style="list-style-type:circle">bbb라는 빈 파일 생성</li></ul></li></ul><ul id="33947383-a3a8-44ba-829f-805e6271b0a0" class="bulleted-list"><li style="list-style-type:disc"><strong>ls : list 약자</strong><ul id="943203eb-709a-4dc4-be2c-ad5f24af477d" class="bulleted-list"><li style="list-style-type:circle">ls : 디렉토리 안의 파일 목록 보여줌</li></ul><ul id="f01575b6-e238-4c45-acfa-58e32e571aa1" class="bulleted-list"><li style="list-style-type:circle">ls -l : 디렉토리 안의 파일 목록을 자세하게 보여줌</li></ul><ul id="e5fcc07b-a2d9-4baf-b93e-250b8874561f" class="bulleted-list"><li style="list-style-type:circle">ls -a : 숨김 파일 포함 보여줌</li></ul><ul id="701aad6f-7fb6-45db-b290-5df23f23b32a" class="bulleted-list"><li style="list-style-type:circle">ls -al : 자세하게 보여줌 (all)</li></ul><ul id="5e13e48a-31fd-4ab9-9934-e36439391b62" class="bulleted-list"><li style="list-style-type:circle">ls *.txt : txt 확장자 파일을 다 보여줌<figure id="140b00ef-520f-43b3-bd4e-14e5e90c6d28" class="image"><a href="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%209.png"><img style="width:362px" src="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%209.png"/></a></figure></li></ul><ul id="ff7ee7a4-c08a-4808-b566-0ed1f2017ebe" class="bulleted-list"><li style="list-style-type:circle">ex) -rw-rw-r-- 1 j j 0 1월 18 20:05 bbb / drwxrwxr-x 2 j j 4096 1월 18 20:05 ddd<ul id="ddf7491c-d5c4-4ad7-a32b-cccc052bf028" class="bulleted-list"><li style="list-style-type:square">처음 -로 시작하는 것 : 파일(file)</li></ul><ul id="e639e04f-d5eb-44f5-b9bf-1afefd450bcc" class="bulleted-list"><li style="list-style-type:square">처음 d로 시작하는 것 : 디렉토리(file)</li></ul></li></ul><p id="97bbffc7-6be6-4324-90f7-cadac4a448e9" class="">
+</p></li></ul><ul id="c9c9588c-cdd7-4ca6-8709-2010d50d7e1b" class="bulleted-list"><li style="list-style-type:disc"><strong>pwd</strong> <ul id="9fbb38f2-e9f8-4a9c-a146-61d2eef06144" class="bulleted-list"><li style="list-style-type:circle">print working directory : 현재 위치</li></ul></li></ul><ul id="abde68fe-2374-4fec-88e2-71fca1ca66b1" class="bulleted-list"><li style="list-style-type:disc"><strong>rmdir ddd</strong><ul id="151073e1-1ee5-470d-94c2-defc08b5800d" class="bulleted-list"><li style="list-style-type:circle">ddd 라는 디렉토리 삭제<figure id="00136383-8d31-4de8-a548-6b0aebd1cb8a" class="image"><a href="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%2010.png"><img style="width:216px" src="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%2010.png"/></a></figure></li></ul><p id="1e74cf59-3097-42d9-b345-0b6bfaa74431" class="">
+</p></li></ul><ul id="6a644dd4-094e-49a3-8c62-2ca886c5a4d7" class="bulleted-list"><li style="list-style-type:disc"><strong>rm -rf ddd</strong><ul id="96ffd28a-9f4b-4776-82f6-41dab61346c1" class="bulleted-list"><li style="list-style-type:circle">ddd라는 디렉토리 강제 삭제<ul id="680c5a31-5ded-4858-a4e4-f4cc7ed46326" class="bulleted-list"><li style="list-style-type:square">ex : ddd 내부에 디렉토리가 생성 되어있을 때 rmdir로는 삭제가 되지 않지만 rm -rf ddd로는 삭제 가능
+</li></ul></li></ul></li></ul><ul id="c0cf4887-ed49-4cc1-a6c0-79f10d2ecabd" class="bulleted-list"><li style="list-style-type:disc"><strong>응용하기</strong><ul id="c2f5a6ca-91ee-4848-9197-7406b7c33ced" class="bulleted-list"><li style="list-style-type:circle">mkdir d{1..5} : 한꺼번에 d1~d5 디렉토리 생성</li></ul><ul id="2d316b84-a180-4aa1-990e-8620badd7db7" class="bulleted-list"><li style="list-style-type:circle">mkdir k{1..5} : 한꺼번에 k1~k5 디렉토리 생성</li></ul><ul id="5456dd78-eeb0-47fa-9c87-3940835d89c7" class="bulleted-list"><li style="list-style-type:circle">rmdir d{1..5} : 한꺼번에 d1~d5 디렉토리 삭제</li></ul><ul id="6d1cf673-5a72-44b4-9089-1dfb37ff4d0c" class="bulleted-list"><li style="list-style-type:circle">rmdir k{1..5} : 한꺼번에 k1~k5 디렉토리 삭제<figure id="aec907a9-ff2c-4428-b0ae-f43bb1c249a8" class="image"><a href="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%2011.png"><img style="width:526px" src="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%2011.png"/></a></figure></li></ul></li></ul><p id="30e78a65-e1ef-459f-9add-f035397f8c95" class="">
+</p><p id="bd786e87-0a2f-44a0-a22d-820e826362bd" class="">
+</p><ul id="61e906dc-ce1b-4160-9b9f-bbb53b8fffff" class="bulleted-list"><li style="list-style-type:disc"><strong>경로 표시 방법 (vi) 모드</strong><ul id="fdd76751-f51b-4401-a7b8-5fdd5d7aa453" class="bulleted-list"><li style="list-style-type:circle">root로 전환(관리자 모드)</li></ul><ul id="eb2a6be5-867f-4a04-8f3c-f0eb597b313f" class="bulleted-list"><li style="list-style-type:circle">vi 모드에서 앞쪽 넘버 표시 하는 방법<ul id="ab80f5a9-5607-44b6-a160-dbd306f5df1b" class="bulleted-list"><li style="list-style-type:square">Esc 키를 눌러 명령 모드로 전환</li></ul><ul id="09b8e2e1-c4ea-4267-a27c-a40236c06ebd" class="bulleted-list"><li style="list-style-type:square">: (colon)을 누르면 커서가 화면 왼쪽 하단 모서리로 이동. set number 또는 set nu를 입력하고 Enter</li></ul></li></ul></li></ul><p id="f33cc50e-1aba-499b-92d8-4a218f3433f1" class="">
+</p><ul id="0c8bdfbc-0791-4b61-a4ba-cfe974acadf3" class="bulleted-list"><li style="list-style-type:disc"><strong>내 home으로 돌아오기</strong><ul id="5f88ba5c-b7f2-4f78-98a7-40ea5c79a707" class="bulleted-list"><li style="list-style-type:circle">cd로 경로 이동 후 한번에 돌아오기 : cd ~ 혹은 cd<figure id="e56ca214-940f-4377-83dd-8a82cdd34bfc" class="image"><a href="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%2012.png"><img style="width:206px" src="14%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%AE%E1%84%8B%E1%85%A5%E1%86%B8(1%2018)%20a7e64e8672af4e10822b97ee35060a7f/Untitled%2012.png"/></a></figure></li></ul><ul id="521e1814-fd2e-4992-9328-87cc91e07175" class="bulleted-list"><li style="list-style-type:circle"></li></ul></li></ul><p id="25324a2d-97d3-4a17-a6ea-293bd79c4b90" class="">
+</p><p id="0fc963d5-dfcf-46b0-bbbf-c460086dc9c0" class="">
+</p><p id="e0192180-ae82-4b78-b8a0-1f032132da91" class="">
+</p><p id="76261457-5476-4bbe-9824-647e8c829dd0" class="">
+</p><p id="04945901-dde9-41d5-b0e9-3e8c6a15b5c3" class="">
+</p><p id="ecb4fbd5-54cc-4ad2-86b9-ba6579f0dbb5" class="">
+</p><p id="3a6aaf8a-c09c-4f5a-8a89-cd27ca3f6815" class="">
+</p><p id="7a8b882f-30dd-41b9-a165-bcfcf9c85325" class="">
+</p></div></article></body></html>
