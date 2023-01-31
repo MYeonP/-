@@ -58,6 +58,8 @@ from tensorflow.keras.layers import Dense, Conv2D, Flatten
 
 model = Sequential()
 model.add(Conv2D(64, (2,2), input_shape=(100, 100, 1)))
+model.add(Conv2D(128, (3,3), activation='relu'))
+model.add(Conv2D(128, (3,3), activation='relu'))
 model.add(Conv2D(64, (3,3), activation='relu'))
 model.add(Conv2D(32, (3,3), activation='relu'))
 model.add(Flatten())
@@ -115,6 +117,11 @@ val_acc :  0.6000000238418579
 
 loss :  1.7273862340516644e-07
 val_loss :  1.024712085723877
+acc :  1.0
+val_acc :  0.800000011920929
+
+loss :  0.0038683456368744373
+val_loss :  0.8741262555122375
 acc :  1.0
 val_acc :  0.800000011920929
 
