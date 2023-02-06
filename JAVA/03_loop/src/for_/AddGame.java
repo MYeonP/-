@@ -12,6 +12,21 @@ public class AddGame {
 			a = (int)(Math.random() * 90 + 10); //10 ~ 99
 			b = (int)(Math.random() * 90 + 10); //10 ~ 99
 			
+// 과제	
+			for(int j=1; j<=2; j++) {// 틀리면 기회
+				System.out.println("[" + i + "]" + a + "+" + b + "=");
+				dab = scan.nextInt();
+				
+				if(dab == a+b) {
+					System.out.println("참 잘했어요");
+					count++;
+					break; // for j를 벗어나라
+				}
+				else
+					if(j == 1) System.out.println("틀렸습니다");
+					else if(j == 2) System.out.println("틀렸습니다. 정답은 " + (a + b));
+			} // for j
+			
 			System.out.println("[" + i + "] " + a + " + " + b + " = ");
 			dab = scan.nextInt();
 					

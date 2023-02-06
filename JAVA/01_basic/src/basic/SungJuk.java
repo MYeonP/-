@@ -3,6 +3,8 @@ package basic;
 public class SungJuk {
 
 	public static void main(String[] args) {
+		char name = 'L';
+		
 		int kor;
 		kor = 85;
 		
@@ -18,7 +20,7 @@ public class SungJuk {
 		double avg = (double)tot/3;
 		
 		
-		System.out.println("\t  *** L 성적표 ***");
+		System.out.println("\t  *** " + name + " 성적표 ***");
 		System.out.println("국어\t영어\t수학\t총점\t평균");
 		System.out.println(kor + "\t" + eng + "\t" + math + "\t" + tot + "\t" + String.format("%.2f", avg));
 

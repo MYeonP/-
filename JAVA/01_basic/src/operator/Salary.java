@@ -6,29 +6,39 @@ import java.util.Scanner;
 public class Salary {
 
 	public static void main(String[] args) {
-		String name = "홍길동";
-		String position = "부장";
-		int pay = 4900000;
-		int benefit = 200000;
-		
-		int total = pay + benefit;
-		int tax = total>=5000000 ? (int)(total*0.03) : (int)(total*0.02);
-		int salary = total - tax;
-		
-		System.out.println("이름 입력 : " + name);
-		System.out.println("직급 입력 : " + position);
-		System.out.println("기본급 입력 : " + pay);
-		System.out.println("기본급 입력 : " + benefit);
-		System.out.println();
-		
+		Scanner sc = new Scanner(System.in);
 		DecimalFormat df = new DecimalFormat();
 		
-		System.out.println("*** 홍길동 부장 월급 ***");
+		String name, position;
+		int pay, benefit, total, tax, salary;
+		double taxRate;
+		
+		System.out.println("이름 입력 : ");
+		name = sc.next();
+		System.out.println("직급 입력 : ");
+		position = sc.next();
+		System.out.println("기본급 입력 : ");
+		pay = sc.nextInt();
+		System.out.println("수당 입력 : ");
+		benefit = sc.nextInt();
+		System.out.println();
+		
+		total = pay + benefit;
+		taxRate = total >= 5000000 ? 0.03 : total >= 3000000 ? 0.02 : 0.01;
+		tax = (int)(total * taxRate);
+		salary = total - tax;
+		
+		System.out.println("*** " + name + " " + position + "월급 ***");
+		System.out.println();
 		System.out.println("기본급 : " + df.format(pay) + "원");
 		System.out.println("수당  :   " + df.format(benefit) + "원");
 		System.out.println("합계  : " + df.format(total) + "원");
 		System.out.println("세금  :   " + df.format(tax) + "원");
 		System.out.println("월급  : " + df.format(salary) + "원");
+		
+		
+		
+		
 	}
 
 }

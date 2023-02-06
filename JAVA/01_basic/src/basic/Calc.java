@@ -3,6 +3,8 @@ package basic;
 public class Calc {
 
 	public static void main(String[] args) {
+		// int a = 320, b = 258;로 처리 가능
+		
 		int a;
 		a = 320;
 		
@@ -16,6 +18,7 @@ public class Calc {
 		System.out.println(a + "*" + b + "="  + (a*b));
 		System.out.println(a + "/" + b + "="  + String.format("%.2f", result));
 	}
+	// String.format : format은 바로 써도 되는 static으로 볼 수 있음
 
 }
 

@@ -3,11 +3,24 @@ package for_;
 public class For05 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+			int line=0, count=0;
+			
+			
+			for (int i=1;i<=100;i++) {
+				char random = (char)(Math.random() * ('Z' - 'A') + 'A'); 
+				System.out.print(random);
+				line+=1;
+				
+				if(line%10 == 0) System.out.println(line + "\t");
+				
+				if(random == 'A') {
+					count++;
+				}
+			}
+			System.out.println("A의 개수 = " + count);
+		}
 
 	}
-
-}
 
 /*
 [문제] 대문자(A~Z)를 100개 발생하여 출력하시오

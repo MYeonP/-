@@ -5,32 +5,26 @@ public class Dice {
 	public static void main(String[] args) {
 		int dice1, dice2;
 		
-		dice1 = (int)(Math.random() * (4) + 1);
+		dice1 = (int)(Math.random()*6) + 1; // 1 ~ 6 사이의 난수
 		//System.out.println(Math.random());
 		//System.out.println(dice1);
 		
-		dice2 = (int)(Math.random() * (4) + 1);
+		dice2 = (int)(Math.random()*6) + 1; // 1 ~ 6 사이의 난수
 		//System.out.println(Math.random());
 		//System.out.println(dice2);
 		
+		//System.out.println(dice1 + " " + dice2);
+		
+		
+		String result = (dice1 > dice2 ? "주사위1 승" : dice1 < dice2 ? "주사위2 승" : "무승부");
+		
 
 		System.out.println("주사위1 : " + dice1 + "\t" + "주사위2 : " + dice2);
-		
-		// String result = dice1 > dice2 ? "주사위1 승" : "주사위2 승";
-		//System.out.println(result);
-		
-		if(dice1 > dice2){
-			System.out.println("주사위1 승");
-		}else if(dice1 < dice2){
-			System.out.println("주사위2 승");
-		}else {
-			System.out.println("무승부");
-		}
+		System.out.println(result);
 
 	}
 
 }
-
 
 
 /*
@@ -58,4 +52,14 @@ x ~ y 사이의 난수
 
 ex) 65 ~ 90 사이의 난수 => (int)(Math.random() * (26) + 65)
 
-*/
+		// String result = dice1 > dice2 ? "주사위1 승" : "주사위2 승";
+		//System.out.println(result);
+		
+		// if(dice1 > dice2){
+		//	System.out.println("주사위1 승");
+		// }else if(dice1 < dice2){
+		//	System.out.println("주사위2 승");
+		// }else {
+		//	System.out.println("무승부");
+		 * 
+		 */
