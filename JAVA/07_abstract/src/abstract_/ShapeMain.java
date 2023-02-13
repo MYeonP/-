@@ -1,20 +1,16 @@
-package inheritance;
+package abstract_;
 
 import java.util.Scanner;
 
-class Shape {
+abstract class Shape {
 	protected double area;
 	protected Scanner sc = new Scanner(System.in);
 	
 	public Shape() {
 		System.out.println("Shape 기본생성자");
 	}
-	public void calcArea() {
-		System.out.println("도형을 계산합니다.");
-	}
-	public void dispArea() {
-		System.out.println("도형을 출력합니다.");
-	}
+	public abstract void calcArea();
+	public abstract void dispArea();
 }
 //-----------------
 class Sam extends Shape {
@@ -75,7 +71,7 @@ class Sadari extends Shape {
 	}
 	@Override
 	public void calcArea() {
-		area = ((top+bottom)*height)/2;
+		area = ((top+bottom)*height)/2.0;
 	}
 	@Override
 	public void dispArea() {
@@ -104,6 +100,7 @@ public class ShapeMain {
 		System.out.println();
 		*/
 		
+		//다형성 => 부모 = 자식
 		//다형성 => 부모 = 자식
 		Shape shape;
 		shape = new Sam();
