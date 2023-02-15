@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class SungJukList implements SungJuk {
 
 	@Override
-	public void execute(ArrayList<SungJukDTO> sungJukDTO) {
+	public void execute(ArrayList<SungJukDTO> arrayList) {
         System.out.println();
 
         System.out.println("번호\t\t이름\t\t국어\t\t영어\t\t수학\t\t총점\t\t평균");
@@ -33,7 +33,7 @@ public class SungJukList implements SungJuk {
 //                    dto.getAvg());
 //        }
 
-        for (SungJukDTO dto : sungJukDTO) {
+        for (SungJukDTO dto = sungJukDTO) {
             System.out.println(dto);// toString()이 생략되어있어 @클래스명16진수로 출력될 수 있게 함 -> override하여 format 변경
         }
     }
