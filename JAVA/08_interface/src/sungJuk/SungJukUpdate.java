@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SungJukUpdate implements SungJuk {
-	
+
 	@Override
 	public void execute(ArrayList<SungJukDTO> arrayList) {
 		System.out.println();
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("번호 입력 : ");
+		System.out.print("번호 입력 : ");
 		int no = scan.nextInt();
 		
 		int sw = 0;
@@ -35,18 +35,24 @@ public class SungJukUpdate implements SungJuk {
 				sungJukDTO.setEng(eng);
 				sungJukDTO.setMath(math);
 				
-				sungJukDTO.calc(); // 재계산
+				sungJukDTO.calc(); //재계산
 				
 				System.out.println("수정하였습니다.");
-				
+
 			}
 		}//for
 		
 		if(sw == 0) 
-			System.out.println("업는 번호 입니다.");
-		
-		}
-		
-	
+			System.out.println("없는 번호 입니다.");
+	}
 
 }
+
+
+
+
+
+
+
+
+

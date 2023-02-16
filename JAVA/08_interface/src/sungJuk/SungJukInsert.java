@@ -13,7 +13,7 @@ public class SungJukInsert implements SungJuk {
 		System.out.print("번호 입력 : ");
 		int no = scan.nextInt();
 		System.out.print("이름 입력 : ");
-		String name= scan.next();
+		String name = scan.next();
 		System.out.print("국어 입력 : ");
 		int kor = scan.nextInt();
 		System.out.print("영어 입력 : ");
@@ -21,13 +21,25 @@ public class SungJukInsert implements SungJuk {
 		System.out.print("수학 입력 : ");
 		int math = scan.nextInt();
 		
-		SungJukDTO sungJukDTO = new SungJukDTO(no, name,kor, eng, math);
+		SungJukDTO sungJukDTO = new SungJukDTO(no, name, kor, eng, math);
 		sungJukDTO.calc();
 		
 		arrayList.add(sungJukDTO);
-		System.out.println();
-		}
-	}
 		
+		System.out.println("입력하였습니다");
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 

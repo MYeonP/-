@@ -1,6 +1,6 @@
 package sungJuk;
 
-public class SungJukDTO {	// 1인분
+public class SungJukDTO { //1인분
 	private int no;
 	private String name;
 	private int kor, eng, math, tot;
@@ -14,13 +14,11 @@ public class SungJukDTO {	// 1인분
 		this.math = math;
 	}
 	
-    public void calc() {
-        tot = kor + eng + math;
-        avg = (double) tot / 3;
-    }
+	public void calc() {
+		tot = kor + eng + math;
+		avg = tot / 3.0;
+	}
 
-  
-	
 	public int getNo() {
 		return no;
 	}
@@ -76,9 +74,24 @@ public class SungJukDTO {	// 1인분
 	public void setAvg(double avg) {
 		this.avg = avg;
 	}
-
+	
 	@Override
 	public String toString() {
-		return no + "\t" + name + "\t" + kor + "\t" + eng + "\t" + math + "\t" + tot + "\t" + avg ;
+		return no+"\t"+name+"\t"+kor+"\t"+eng+"\t"+math+"\t"+tot+"\t"+avg;
 	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
