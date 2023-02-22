@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+
+<form name="personForm" method="get" action="http://naver.com">
+	<table border="1" cellpadding="5" cellspacing="0">
+
+	<tr>
+		<th width="70">이름</th> <!-- 굵게, 가운데 -->
+		<td>
+			<input type="text" name="name" placeholder="이름 입력">
+			<div id="nameDiv"></div>
+		</td>
+	</tr>
+	
+	<tr>
+		<th width="70" >성별</th>
+		<td>
+			<fieldset>
+				<legend>성별</legend>
+				<input type="radio" name="gender" id="gender_m" value="0" checked="checked">
+				<label for="gender_m">남자</label>
+				&nbsp;
+				<input type="radio" name="gender" id="gender_w" value="1">
+				<label for="gender_w">여자</label>
+			</fieldset>
+		</td>
+	</tr>
+	
+	<tr>
+		<th>색깔</th>
+		<td>
+			<select name="color" style="width: 70px">
+				<optgroup label="색깔">
+					<option value="red" selected>빨강</option>
+					<option value="green">초록</option>
+					<option value="blue">파랑</option>
+					<option value="magenta">보라</option>
+					<option value="cyan">하늘</option>
+				</optgroup>
+			</select>
+		</td>
+	</tr>
+	
+	<tr>
+		<th>취미</th>
+		<td>
+    			<input type="checkbox" name="hobby" id="hobby_1", value="독서">
+    			<lavel for = hobby_read> 독서 </lavel>
+    			<input type="checkbox" name="hobby" id="hobby_2", value="영화" >
+    			<lavel for = hobby_movie> 영화 </lavel>
+    			<input type="checkbox" name="hobby" id="hobby_3", value="음악">
+    			<lavel for = hobby_music> 음악 </lavel>
+    			<input type="checkbox" name="hobby" id="hobby_4", value="게임">
+    			<lavel for = hobby_game> 게임 </lavel>
+    			<input type="checkbox" name="hobby" id="hobby_5", value="쇼핑">
+    			<lavel for = hobby_show> 쇼핑 </lavel>
+		</td>
+	</tr>
+	
+	<tr>
+		<th>과목</th>
+		<td>
+			<select name="subject" size="5" style="width: 100px;" multiple="multiple">
+				<option value="Java">Java</option>
+				<option value="Servlet">Servlet</option>
+				<option value="JSP">JSP</option>
+				<option value="Spring">Spring</option>
+			</select>
+		</td>
+	</tr> 
+	
+	<tr>
+		<td colspan="2" align="center">
+			<input type="submit" value="SEND">
+			<input type="reset" value="CANCEL">
+		</td>
+	</tr>
+
+
+
+</table>
+</form>
+</body>
+</html>
